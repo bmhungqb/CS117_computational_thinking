@@ -30,4 +30,4 @@
 1. Tên đồ án: 
 
 ## Demo
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/zpfKLGcdWVI)
+[![Watch the video](https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg)](https://www.youtube.com/embed/zpfKLGcdWVI)
