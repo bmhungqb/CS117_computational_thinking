@@ -30,3 +30,4 @@
 1. Tên đồ án: 
 
 ## Demo
+[output.mp4](output.mp4)
