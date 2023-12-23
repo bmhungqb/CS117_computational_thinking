@@ -30,4 +30,5 @@
 1. Tên đồ án: 
 
 ## Demo
-[output.mp4](output.mp4)
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)]([/output.mp4](https://youtu.be/zpfKLGcdWVI?si=pM7Q62vXANif2N1H)https://youtu.be/zpfKLGcdWVI?si=pM7Q62vXANif2N1H)
+
