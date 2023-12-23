@@ -30,3 +30,4 @@
 1. Tên đồ án: 
 
 ## Demo
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](/output.mp4)
