@@ -30,4 +30,8 @@
 1. Tên đồ án: 
 
 ## Demo
-[![Watch the video](https://img.youtube.com/vi/APOPm01BVrk/hqdefault.jpg)](https://www.youtube.com/embed/zpfKLGcdWVI)
+
+
+https://github.com/bmhungqb/CS117_computational_thinking/assets/117832185/09014398-ad6e-413a-92aa-ac4681e7e6ef
+
+
