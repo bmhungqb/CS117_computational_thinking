@@ -30,4 +30,8 @@
 1. Tên đồ án: 
 
 ## Demo
+<<<<<<< HEAD
 [output.mp4](output.mp4)
+=======
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](/output.mp4)
+>>>>>>> bd45aa88ebbca697b6550c69a518fc45a7feb593
