@@ -31,7 +31,15 @@
 
 ## Demo
 <<<<<<< HEAD
+<<<<<<< HEAD
 [output.mp4](output.mp4)
 =======
 [![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](/output.mp4)
 >>>>>>> bd45aa88ebbca697b6550c69a518fc45a7feb593
+=======
+
+
+https://github.com/bmhungqb/CS117_computational_thinking/assets/117832185/09014398-ad6e-413a-92aa-ac4681e7e6ef
+
+
+>>>>>>> 836e73db67ec357162de9e234666db1921f43798
