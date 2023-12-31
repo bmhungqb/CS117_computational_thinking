@@ -77,7 +77,8 @@ def Recover(im,t,A,tx = 0.1):
     return res
 
 def process_image(src):
-    I = src.astype('float64')/255
+    I = np.float64(src)/255
+    # I = src.astype('float64')/255.
     dark = DarkChannel(I, 15)
     A = AtmLight(I, dark)
     te = TransmissionEstimate(I, A, 15)
@@ -98,10 +99,10 @@ if __name__ == '__main__':
 
     I = src.astype('float64')/255
 
-    dark = DarkChannel(I,15)
-    A = AtmLight(I,dark)
-    te = TransmissionEstimate(I,A,15)
-    t = TransmissionRefine(src,te)
+    dark = DarkChannel(I, 15)
+    A = AtmLight(I, dark)
+    te = TransmissionEstimate(I, A, 15)
+    t = TransmissionRefine(src, te)
     J = Recover(I,t,A,0.1)
 
     cv2.imshow("dark",dark)
