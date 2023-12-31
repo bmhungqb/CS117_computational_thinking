@@ -3,7 +3,7 @@ import cv2
 from tools.dehaze import haze_removal
 import numpy as np
 # Load YOLO model
-model = YOLO(r"Code/weights/yolov8n.pt")
+model = YOLO(r"Code/weights/best.pt")
 
 # Define path to video file
 source = r"Code/assets/video_demo.mp4"
