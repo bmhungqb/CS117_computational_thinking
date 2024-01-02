@@ -1,38 +1,41 @@
-from ultralytics import YOLO
-import cv2
-import  tools.dark_channel_prior as dcp
+from PIL import Image
 import numpy as np
+from moviepy.editor import VideoFileClip, ImageSequenceClip
+from ultralytics import YOLO
+from tools.dehaze import process_image
+import cv2
+# Load YOLO model
+model = YOLO(r"Code/weights/yolov8n.pt")
 
-def remove_noise(image):
-    processed_image, alpha_map = dcp.haze_removal(image, w_size=15, a_omega=0.95, gf_w_size=200, eps=1e-6)
-    return processed_image
+# Define path to video file
+source = r"Code/assets/video_demo.mp4"
 
-def main():
-    # Load YOLO model
-    model = YOLO(pth_model)
+# Run inference on the source
+results = model(source, stream=True, save=True, device='cpu', conf=0.25, imgsz=416)
 
-    cap = cv2.VideoCapture(pth_source)
+# Initialize video clip
+video_clip = VideoFileClip(source)
+fps = video_clip.fps
+size = video_clip.size
 
-    # Define the codec and create a video writer object for MP4
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    out = cv2.VideoWriter(pth_output, fourcc, 20.0, (int(cap.get(3)), int(cap.get(4))))
+# Create a list to store processed frames
+processed_frames = []
 
-    # Loop through the video frames
-    while cap.isOpened():
-        # Read a frame from the video
-        success, frame = cap.read()
+# Process each frame and save the video
+for frame, r in zip(video_clip.iter_frames(fps=fps, dtype='uint8'), results):
+    # Plot bounding boxes on the frame with customization
+    im_array = r.plot(line_width=2, font_size=4)
+    im = Image.fromarray(im_array[..., ::-1])  # Convert to RGB PIL image
+    # frame = process_image(frame)
+    frame_with_overlay = Image.blend(Image.fromarray(frame), im, alpha=0.5)
 
-        processed_image = remove_noise(frame)
-        if success:
-            # Run YOLOv8 inference on the frame
-            results = model(processed_image)
-            print(results)
-            # Visualize the results on the frame
-            annotated_frame = results[0].plot()
-            # Write the annotated frame to the output video
-            out.write(annotated_frame)
-if __name__ == "__main__":
-    pth_model = r"Code/weights/best.pt"
-    pth_source = r"Code/assets/video_demo.mp4"
-    pth_output = r"output_video.mp4"
-    main()
+    np_frame = np.array(frame_with_overlay)
+
+    # Append the processed frame to the list
+    processed_frames.append(np_frame)
+
+# Create an ImageSequenceClip from the processed frames
+processed_clip = ImageSequenceClip(processed_frames, fps=fps)
+
+# Save the processed video
+processed_clip.write_videofile("output.mp4", codec="libx264", audio_codec="aac")

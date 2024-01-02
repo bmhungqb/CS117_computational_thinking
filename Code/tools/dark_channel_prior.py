@@ -143,4 +143,4 @@ def haze_removal(img, w_size=15, a_omega=0.95, gf_w_size=200, eps=1e-6):
     img = np.maximum(img, 0)
     img = np.minimum(img, 255)
 
-    return img, f_alpha_map
+    return img
