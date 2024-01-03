@@ -2,7 +2,6 @@ from PIL import Image
 import numpy as np
 from moviepy.editor import VideoFileClip, ImageSequenceClip
 from ultralytics import YOLO
-from tools.dehaze import process_image
 import cv2
 # Load YOLO model
 model = YOLO(r"Code/weights/yolov8n.pt")
@@ -11,7 +10,7 @@ model = YOLO(r"Code/weights/yolov8n.pt")
 source = r"Code/assets/video_demo.mp4"
 
 # Run inference on the source
-results = model(source, stream=True, save=True, device='cpu', conf=0.25, imgsz=416)
+results = model(source, stream=True, save=True, device=0, conf=0.25, imgsz=416)
 
 # Initialize video clip
 video_clip = VideoFileClip(source)
