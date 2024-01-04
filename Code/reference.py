@@ -10,7 +10,7 @@ model = YOLO(r"Code/weights/yolov8n.pt")
 source = r"Code/assets/video_demo.mp4"
 
 # Run inference on the source
-results = model(source, stream=True, save=True, device=0, conf=0.25, imgsz=416)
+results = model(source, stream=True, save=True, device=0, conf=0.25)
 
 # Initialize video clip
 video_clip = VideoFileClip(source)
