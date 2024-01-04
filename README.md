@@ -27,7 +27,8 @@
 | 4      | 21522110      | Bùi Mạnh Hùng           |21522110@gm.uit.edu.vn   |
 ## ĐỒ ÁN MÔN HỌC
 <a name="doan"></a>
-1. Tên đồ án: 
+1. Tên đồ án: **UNDERWATER GARBAGE CLASSIFICATIO**
 
 ## Demo
-https://github.com/bmhungqb/CS117_computational_thinking/assets/117832185/3fadae9a-8dcd-48e6-a46a-f46d438ed61a
+https://github.com/bmhungqb/CS117_computational_thinking/assets/117832185/1aef7ddc-3cd7-41a1-bc6e-0bc17986caba
+
